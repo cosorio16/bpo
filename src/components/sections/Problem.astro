@@ -1,0 +1,86 @@
+---
+import CreditCardIcon from "../../icons/CreditCardIcon.astro";
+import UsersLimited from "../../icons/UsersLimited.astro";
+import DelayIcon from "../../icons/DelayIcon.astro";
+import PuzzleIcon from "../../icons/PuzzleIcon.astro";
+import UsersRaysIcon from "../../icons/UsersRaysIcon.astro";
+
+const items = [
+  {
+    text: "Rising operational costs in the U.S.",
+    icon: CreditCardIcon,
+  },
+  {
+    text: "",
+    icon: null,
+  },
+  {
+    text: "",
+    icon: null,
+  },
+  {
+    text: "Lack of scalable teams",
+    icon: UsersLimited,
+  },
+  {
+    text: "Delays due to offshore time zone gaps",
+    icon: DelayIcon,
+  },
+  {
+    text: "",
+    icon: null,
+  },
+  {
+    text: "",
+    icon: null,
+  },
+  {
+    text: "Poor integration between departments",
+    icon: PuzzleIcon,
+  },
+  {
+    text: "High employee turnover",
+    icon: UsersRaysIcon,
+  },
+];
+---
+
+<section
+  class="px-8 py-40 flex flex-col gap-5 items-center text-center font-DM"
+>
+  <div class="flex flex-col gap-2">
+    <h1 class="text-6xl">
+      Your Operations Are <span class="text-indigo-500 font-semibold"
+        >Costing</span
+      >
+      <br />
+      More Than They Should
+    </h1>
+
+    <h2 class="text-2xl text-neutral-600">
+      Inefficiencies, high labor costs, and fragmented processes are slowing
+      your growth.
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6 w-full">
+    {
+      items.map(({ text, icon: Icon }) => (
+        <div
+          class={`h-32 w-full text-2xl xl:text-4xl flex items-center justify-center gap-3`}
+        >
+          {Icon && (
+            <span class="text-indigo-500">
+              <Icon sizes="45" />
+            </span>
+          )}
+          {text && <h1 class="whitespace-nowrap">{text}</h1>}
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="underline text-lg text-indigo-500">
+    Most outsourcing providers execute tasks. Very few improve your operations.
+  </p>
+</section>

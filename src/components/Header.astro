@@ -1,0 +1,35 @@
+---
+const links = [
+  "Services",
+  "Industries",
+  "How It Works",
+  "Case Studies",
+  "Pricing",
+  "FAQ",
+];
+---
+
+<header
+  class="flex items-center justify-between max-w-7xl m-auto h-20 font-manrope fixed top-0 w-screen left-1/2 -translate-x-1/2 text-white z-10 px-8"
+>
+  <div class="w-32 font-manrope font-bold">INVERCON</div>
+  <nav class="grow">
+    <ul class="flex items-center justify-center gap-12">
+      {
+        links.map((l, i) => (
+          <li>
+            <a
+              href="#"
+              class="border-b border-transparent hover:border-white transition"
+            >
+              {l}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <button class="bg-indigo-500 py-2 rounded-full font-medium w-32">
+    Book a Call
+  </button>
+</header>
