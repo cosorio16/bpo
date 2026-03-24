@@ -1,18 +1,45 @@
-4. SOLUTION SECTION
-Headline:
+---
+const elements = [
+  "Process engineering approach",
+  "KPI-driven execution",
+  "Integrated operations model",
+  "Continuous optimization",
+];
+---
 
-We Engineer Your Operations for Performance and Scale
+<section class="px-8 py-40 font-manrope max-w-7xl m-auto">
+  <div
+    class="bg-indigo-500 rounded-lg flex flex-col gap-8 py-20 px-6 text-white text-center justify-center"
+  >
+    <div class="flex flex-col gap-4">
+      <h1 class="text-6xl">
+        We Engineer Your Operations for <br />
 
-Subheadline:
+        <span class="font-DM font-semibold underline decoration-wavy">
+          Performance and Scale
+        </span>
+      </h1>
 
-A nearshore BPO model built on data, process optimization, and real-time collaboration.
+      <h2 class="text-2xl">
+        A nearshore BPO model built on data, process optimization, and real-time
+        collaboration.
+      </h2>
 
-Description:
+        <p class="font-medium">
+        At INVERCON Logistic, we design, implement, and manage operational
+        systems that integrate logistics, customer service, and administrative
+        workflows under one strategic framework.
+      </p>
+    </div>
 
-At INVERCON Logistic, we design, implement, and manage operational systems that integrate logistics, customer service, and administrative workflows under one strategic framework.
-
-Key Elements:
-Process engineering approach
-KPI-driven execution
-Integrated operations model
-Continuous optimization
+    <ul class="flex items-center flex-wrap justify-center gap-6">
+      {
+        elements.map((e) => (
+          <li class="ring-2 rounded-full text-lg px-4 py-1 bg-white text-indigo-500 font-medium font-DM">
+            {e}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

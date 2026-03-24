@@ -1,35 +1,73 @@
-6. SERVICES SECTION
-Headline:
+---
+const services = [
+  {
+    title: "Logistics & Transportation Management",
+    items: [
+      "Route optimization and shipment coordination",
+      "Fleet and carrier management",
+      "Cold chain logistics",
+      "Warehouse operations and inventory control",
+      "Import/export process support",
+    ],
+  },
+  {
+    title: "Customer Experience (CX) Management",
+    items: [
+      "Multichannel support (voice, chat, email)",
+      "Bilingual customer service",
+      "SLA-driven performance",
+      "QA and continuous coaching",
+    ],
+  },
+  {
+    title: "Back Office Operations",
+    items: [
+      "Accounts payable and receivable",
+      "Payroll and HR support",
+      "Data entry and reporting",
+      "Financial and administrative workflows",
+    ],
+  },
+  {
+    title: "Technical Support (Tier 1 & 2)",
+    items: [
+      "IT help desk services",
+      "Infrastructure monitoring",
+      "System and software support",
+      "Operational continuity management",
+    ],
+  },
+  {
+    title: "Sales & Lead Generation Support",
+    items: [
+      "Lead qualification",
+      "CRM management",
+      "Outbound and inbound support",
+      "Pipeline acceleration",
+    ],
+  },
+];
+---
 
-End-to-End Operational Support
+<section class="px-8 py-40">
+  <h1>End-to-End Operational Support</h1>
+  <h2>
+    Integrated services designed to optimize every critical function of your
+    business.
+  </h2>
 
-Subheadline:
-
-Integrated services designed to optimize every critical function of your business.
-
-1. Logistics & Transportation Management
-Route optimization and shipment coordination
-Fleet and carrier management
-Cold chain logistics
-Warehouse operations and inventory control
-Import/export process support
-2. Customer Experience (CX) Management
-Multichannel support (voice, chat, email)
-Bilingual customer service
-SLA-driven performance
-QA and continuous coaching
-3. Back Office Operations
-Accounts payable and receivable
-Payroll and HR support
-Data entry and reporting
-Financial and administrative workflows
-4. Technical Support (Tier 1 & 2)
-IT help desk services
-Infrastructure monitoring
-System and software support
-Operational continuity management
-5. Sales & Lead Generation Support
-Lead qualification
-CRM management
-Outbound and inbound support
-Pipeline acceleration
+  <div class="grid grid-cols-2 gap-4">
+    {
+      services.map((s) => (
+        <div class="border">
+          <h1>{s.title}</h1>
+          <ul>
+            {s.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

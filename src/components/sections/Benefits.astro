@@ -1,28 +1,63 @@
-Headline:
+---
+const benefits = [
+  {
+    title: "Real Cost Reduction",
+    description:
+      "Reduce operational costs by 30% to 60% without compromising quality.",
+  },
+  {
+    title: "Time Zone Alignment",
+    description: "Work in real time with teams aligned to U.S. business hours.",
+  },
+  {
+    title: "Bilingual Talent",
+    description:
+      "Highly skilled English-Spanish professionals trained in your industry.",
+  },
+  {
+    title: "Operational Efficiency",
+    description:
+      "Improve productivity with engineered workflows and automation.",
+  },
+  {
+    title: "Scalability On Demand",
+    description: "Grow or reduce your team based on business needs.",
+  },
+  {
+    title: "Full Visibility",
+    description: "Access real-time dashboards, KPIs, and performance reports.",
+  },
+];
+---
 
-Why Leading Companies Choose Nearshore with Us
+<section class="py-40 px-8 font-DM flex flex-col gap-8 max-w-7xl m-auto">
+  <h1 class="font-manrope text-6xl font-medium">
+    Why Leading Companies <span> Choose</span> Nearshore <span> with Us </span>
+  </h1>
 
-Core Benefits:
-1. Real Cost Reduction
+  <div class="grid grid-cols-2 gap-6">
+    {
+      benefits.map((b, i) => {
+        const indexCards = [1, 2, 5];
 
-Reduce operational costs by 30% to 60% without compromising quality.
+        return (
+          <div
+            class={`flex flex-col items-center justify-center text-center p-4 ${indexCards.includes(i) ? "bg-indigo-500 text-white" : "shadow border border-neutral-100"} h-52 rounded`}
+          >
+            <h1 class="text-3xl">{b.title}</h1>
+            <p class="text-lg">{b.description}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
 
-2. Time Zone Alignment
-
-Work in real time with teams aligned to U.S. business hours.
-
-3. Bilingual Talent
-
-Highly skilled English-Spanish professionals trained in your industry.
-
-4. Operational Efficiency
-
-Improve productivity with engineered workflows and automation.
-
-5. Scalability On Demand
-
-Grow or reduce your team based on business needs.
-
-6. Full Visibility
-
-Access real-time dashboards, KPIs, and performance reports.
+<style>
+  span {
+    color: oklch(58.5% 0.233 277.117);
+    font-weight: 700;
+    text-decoration: underline wavy;
+    /* font-family: "DM", sans-serif; */
+  }
+</style>
