@@ -1,19 +1,41 @@
-13. FAQ SECTION
-Headline:
+---
+const questions = [
+  {
+    question: "What is Nearshore BPO?",
+    answer:
+      "Outsourcing to nearby countries like Colombia, enabling real-time collaboration and cultural alignment.",
+  },
+  {
+    question: "How fast can we start?",
+    answer: "Typically within 2 to 4 weeks after initial consultation.",
+  },
+  {
+    question: "How do you ensure quality?",
+    answer:
+      "Through strict hiring, KPIs, QA processes, and continuous monitoring.",
+  },
+  {
+    question: "Can we scale the team?",
+    answer: "Yes. Teams are fully flexible and scalable.",
+  },
+  {
+    question: "What makes you different?",
+    answer: "We engineer and optimize operations, not just execute tasks.",
+  },
+];
+---
 
-Frequently Asked Questions
+<section class="px-8 py-40 max-w-7xl m-auto">
+  <h1>Frequently Asked Questions</h1>
 
-What is Nearshore BPO?
-Outsourcing to nearby countries like Colombia, enabling real-time collaboration and cultural alignment.
-
-How fast can we start?
-Typically within 2 to 4 weeks after initial consultation.
-
-How do you ensure quality?
-Through strict hiring, KPIs, QA processes, and continuous monitoring.
-
-Can we scale the team?
-Yes. Teams are fully flexible and scalable.
-
-What makes you different?
-We engineer and optimize operations, not just execute tasks.
+  <div>
+    {
+      questions.map((question) => (
+        <div>
+          {question.question}
+          {question.answer}
+        </div>
+      ))
+    }
+  </div>
+</section>
