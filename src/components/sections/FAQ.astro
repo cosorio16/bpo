@@ -3,7 +3,7 @@ const questions = [
   {
     question: "What is Nearshore BPO?",
     answer:
-      "Outsourcing to nearby countries like Colombia, enabling real-time collaboration and cultural alignment.",
+      "Outsourcing to nearby countries, enabling real-time collaboration and cultural alignment.",
   },
   {
     question: "How fast can we start?",
@@ -25,15 +25,24 @@ const questions = [
 ];
 ---
 
-<section class="px-8 py-40 max-w-7xl m-auto">
-  <h1>Frequently Asked Questions</h1>
+<section 
+id="faq"
+class="px-8 py-40 max-w-7xl m-auto font-DM flex flex-col gap-16">
+  <h1 class="text-center text-7xl text-indigo-500" data-aos="fade-up">
+    Frequently Asked Questions
+  </h1>
 
-  <div>
+  <div class="flex flex-col gap-12">
     {
       questions.map((question) => (
-        <div>
-          {question.question}
-          {question.answer}
+        <div
+          data-aos="fade-up"
+          class="flex flex-col gap-2 pb-4 border-b border-neutral-200"
+        >
+          <h1 class="py-2 text-4xl text-neutral-800 font-manrope font-medium">
+            {question.question}
+          </h1>
+          <p class="text-2xl text-neutral-600">{question.answer}</p>
         </div>
       ))
     }

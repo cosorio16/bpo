@@ -8,11 +8,27 @@ const features = [
 ];
 ---
 
-<section class="py-40 px-8 max-w-7xl m-auto">
-  <h1>Enterprise-Grade Infrastructure and Security</h1>
+<section 
+id="infrastructure"
+class="py-40 px-8 max-w-7xl m-auto flex flex-col gap-20 font-manrope">
+  <h1 class="text-7xl text-end" data-aos="fade-up">
+    Enterprise-Grade <br />
+    <span class="text-indigo-500 font-medium"> Infrastructure </span>
+    and
+    <span class="text-indigo-500 font-medium"> Security </span>
+  </h1>
 
-  <div>
-    {features.map((f) => <div>{f.text}</div>)}
+  <div class="font-DM flex items-end flex-col gap-4">
+    {
+      features.map((t, i) => (
+        <div
+          data-aos="zoom-in"
+          data-aos-delay={100 * i}
+          class="py-8 px-12 text-4xl bg-indigo-50 text-indigo-500 font-medium w-fit rounded-full"
+        >
+          <p>{t.text}</p>
+        </div>
+      ))
+    }
   </div>
 </section>
-

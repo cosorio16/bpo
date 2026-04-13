@@ -3,23 +3,25 @@ const links = [
   "Services",
   "Industries",
   "How It Works",
-  "Case Studies",
+  "Infrastructure",
   "Pricing",
   "FAQ",
 ];
 ---
 
 <header
-  class="flex items-center justify-between max-w-7xl m-auto h-20 font-manrope fixed top-0 w-screen left-1/2 -translate-x-1/2 text-white z-10 px-8"
+  class="flex items-center justify-between h-20 font-DM fixed top-0 w-screen z-10 px-8 transition"
 >
-  <div class="w-32 font-manrope font-bold">INVERCON</div>
+  <div class="w-32 font-manrope font-bold" data-aos="fade-right">INVERCON</div>
   <nav class="grow">
     <ul class="flex items-center justify-center gap-12">
       {
         links.map((l, i) => (
           <li>
             <a
-              href="#"
+              data-aos="zoom-in"
+              data-aos-delay={100 * i}
+              href={`#${l.toLowerCase().replaceAll(" ", "")}`}
               class="border-b border-transparent hover:border-white transition"
             >
               {l}
@@ -29,7 +31,38 @@ const links = [
       }
     </ul>
   </nav>
-  <button class="bg-indigo-500 py-2 rounded-full font-medium w-32">
+  <button
+    data-aos="fade-left"
+    class="bg-indigo-500 text-white py-2 rounded-full font-medium w-32"
+  >
     Book a Call
   </button>
 </header>
+
+<style>
+  header {
+    color: white;
+  }
+
+  header.active {
+    color: oklch(58.5% 0.233 277.117);
+    background-color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    let scroll = window.scrollY;
+
+    document.addEventListener("scroll", () => {
+      scroll = window.scrollY;
+
+      if (scroll >= 800) {
+        header?.classList.add("active");
+      } else {
+        header?.classList.remove("active");
+      }
+    });
+  });
+</script>

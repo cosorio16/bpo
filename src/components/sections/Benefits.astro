@@ -31,7 +31,7 @@ const benefits = [
 ---
 
 <section class="py-40 px-8 font-DM flex flex-col gap-16 max-w-7xl m-auto">
-  <h1 class="font-manrope text-6xl text-center font-medium">
+  <h1 class="font-manrope text-6xl text-center font-medium" data-aos="fade-up">
     Why Leading Companies <span> Choose</span> Nearshore <span> with Us </span>
   </h1>
 
@@ -42,6 +42,8 @@ const benefits = [
 
         return (
           <div
+
+          data-aos="zoom-in"
             class={`flex flex-col items-center justify-center text-center p-4 ${indexCards.includes(i) ? "bg-indigo-500 text-white" : "shadow border border-neutral-100"} h-52 rounded`}
           >
             <h1 class="text-3xl">{b.title}</h1>

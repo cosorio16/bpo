@@ -24,27 +24,41 @@ const steps = [
 ];
 ---
 
-<section
-  class="px-8 py-40 max-w-7xl m-auto font-manrope flex flex-col gap-16"
->
-  <h1 class="text-8xl font-medium">Simple. <br />Fast. <br />Scalable.</h1>
+<section 
+id="howitworks"
+class="px-8 py-40 max-w-7xl m-auto font-manrope flex flex-col gap-16">
+  <h1 class="text-8xl font-medium" data-aos="fade-up">
+    Simple. <br />Fast. <br />Scalable.
+  </h1>
 
   <div class="flex flex-col gap-32">
     {
       steps.map((step) => (
         <div class="flex items-start gap-12 relative ">
-          <div class="size-20 bg-indigo-500 text-white flex items-center justify-center rounded-full text-5xl">
+          <div
+            data-aos="fade-right"
+            class="size-20 bg-indigo-500 text-white flex items-center justify-center rounded-full text-5xl"
+          >
             {step.step}
           </div>
           <div>
-            <h2 class="font-DM text-4xl text-indigo-500">{step.title}</h2>
-            <p class="text-2xl font-medium text-neutral-600">
+            <h2 class="font-DM text-4xl text-indigo-500" data-aos="fade-up">
+              {step.title}
+            </h2>
+            <p
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="text-2xl font-medium text-neutral-600"
+            >
               {step.description}
             </p>
           </div>
 
           {step.step < steps.length && (
-            <span class="border absolute h-full top-[130%] left-10 border-neutral-300" />
+            <span
+              data-aos="zoom-in"
+              class="border absolute h-full top-[130%] left-10 border-neutral-300"
+            />
           )}
         </div>
       ))

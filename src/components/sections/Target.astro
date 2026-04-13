@@ -9,10 +9,25 @@ const targets = [
 ];
 ---
 
-<section class="py-40 px-8 max-w-7xl m-auto">
-  <h1>Built for High-Growth Industries</h1>
+<section 
+id="industries"
+class="py-40 px-8 max-w-7xl m-auto font-manrope flex flex-col gap-20">
+  <h1 class="text-7xl" data-aos="fade-up">
+    Built for <span class="text-indigo-500 font-medium"> High-Growth</span>
+    <br /> Industries
+  </h1>
 
-  <div>
-    {targets.map((t) => <div>{t.name}</div>)}
+  <div class="font-DM flex flex-col gap-4">
+    {
+      targets.map((t, i) => (
+        <div
+          data-aos="zoom-in"
+          data-aos-delay={100 * i}
+          class="py-8 px-12 text-4xl bg-indigo-50 text-indigo-500 font-medium w-fit rounded-full"
+        >
+          <p>{t.name}</p>
+        </div>
+      ))
+    }
   </div>
 </section>
