@@ -1,50 +1,54 @@
+---
+import { useTranslations } from "../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
+const sections = [
+  {
+    key: "company",
+    links: ["about", "careers", "contact"],
+  },
+  {
+    key: "services",
+    links: [
+      "technicalSupport",
+      "logistics",
+      "backOffice",
+      "customerExperience",
+    ],
+  },
+  {
+    key: "resources",
+    links: ["caseStudies", "blog", "faq"],
+  },
+  {
+    key: "legal",
+    links: ["privacyPolicy", "termsOfService"],
+  },
+];
+---
+
 <footer
   class="bg-indigo-500 text-white flex items-center justify-center font-DM px-8"
 >
   <div class="max-w-7xl w-full pt-20 flex flex-col gap-10">
-    <div class="grid grid-cols-4 gap-8">
-      <div
-      data-aos="fade-down"
-      class="flex flex-col gap-4">
-        <h1>Company</h1>
-        <a href="#">About Us</a>
-        <a href="#">Careers</a>
-        <a href="#"> Contact </a>
-      </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {
+        sections.map((s) => (
+          <div data-aos="fade-down" class="flex flex-col gap-4">
+            <h1 class="text-white/70">{t.footer.sections[s.key].title}</h1>
 
-      <div
-      data-aos="fade-down"
-      class="flex flex-col gap-4">
-        Services Technical Support
-
-        <a href="#"> Logistics </a>
-        <a href="#"> Back Office </a>
-        <a href="#"> Customer Experience </a>
-      </div>
-
-      <div
-      data-aos="fade-down"
-      class="flex flex-col gap-4">
-        <h1>Resources</h1>
-
-        <a href="#"> Case Studies </a>
-        <a href="#"> Blog </a>
-        <a href="#"> FAQ </a>
-      </div>
-
-      <div
-      data-aos="fade-down"
-      class="flex flex-col gap-4">
-        <h1>Legal</h1>
-
-        <a href="#"> Privacy Policy </a>
-        <a href="#"> Terms of Service </a>
-      </div>
+            {s.links.map((l) => (
+              <a href="#" class="border-b">{t.footer.sections[s.key].links[l]}</a>
+            ))}
+          </div>
+        ))
+      }
     </div>
 
-    <div class="py-4 flex flex-col items-center text-white/70">
-      <p>© 2026 INVERCON Logistic. All rights reserved.</p>
-      <p>Nearshore Operational Engineering for U.S. companies.</p>
+    <div class="py-4 flex flex-col items-center text-white/70 text-center">
+      <p>{t.footer.bottom.copyright}</p>
+      <p>{t.footer.bottom.description}</p>
     </div>
   </div>
 </footer>

@@ -1,83 +1,83 @@
 ---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
 const services = [
   {
-    title: "Logistics & Transportation Management",
+    title: "logisticsTransportation",
     items: [
-      "Route optimization and shipment coordination",
-      "Fleet and carrier management",
-      "Cold chain logistics",
-      "Warehouse operations and inventory control",
-      "Import/export process support",
+      "routeOptimization",
+      "fleetManagement",
+      "coldChain",
+      "warehouseOperations",
+      "importExport",
     ],
   },
   {
-    title: "Customer Experience (CX) Management",
+    title: "customerExperience",
     items: [
-      "Multichannel support (voice, chat, email)",
-      "Bilingual customer service",
-      "SLA-driven performance",
-      "QA and continuous coaching",
+      "multichannelSupport",
+      "bilingualService",
+      "slaPerformance",
+      "qaCoaching",
     ],
   },
   {
-    title: "Back Office Operations",
+    title: "backOffice",
+    items: ["accounts", "payroll", "dataEntry", "financialWorkflows"],
+  },
+  {
+    title: "technicalSupport",
     items: [
-      "Accounts payable and receivable",
-      "Payroll and HR support",
-      "Data entry and reporting",
-      "Financial and administrative workflows",
+      "helpDesk",
+      "infrastructureMonitoring",
+      "systemSupport",
+      "continuityManagement",
     ],
   },
   {
-    title: "Technical Support (Tier 1 & 2)",
+    title: "salesLeadGeneration",
     items: [
-      "IT help desk services",
-      "Infrastructure monitoring",
-      "System and software support",
-      "Operational continuity management",
-    ],
-  },
-  {
-    title: "Sales & Lead Generation Support",
-    items: [
-      "Lead qualification",
-      "CRM management",
-      "Outbound and inbound support",
-      "Pipeline acceleration",
+      "leadQualification",
+      "crmManagement",
+      "outboundInbound",
+      "pipelineAcceleration",
     ],
   },
 ];
 ---
 
-<section id="services" class="px-8 py-40 bg-indigo-500 text-white font-DM">
+<section id="services" class="lg:px-8 px-2 py-20 lg:py-40 bg-indigo-500 text-white font-DM">
   <div class="max-w-7xl m-auto flex flex-col gap-16">
     <div class="text-center flex flex-col gap-3">
-      <h1 class="text-7xl font-bold" data-aos="fade-up">
-        End-to-End Operational Support
+      <h1 class="text-4xl lg:text-7xl font-bold" data-aos="fade-up">
+        {t.services.title}
       </h1>
-      <h2 class="text-3xl font-medium" data-aos="fade-up" data-aos-delay="100">
-        Integrated services designed to optimize every critical function of your
-        business.
+      <h2 class="lg:text-3xl text-lg font-medium" data-aos="fade-up" data-aos-delay="100">
+        {t.services.subtitle}
       </h2>
     </div>
 
     <div class="flex flex-col gap-16">
       {
-        services.map((s, i) => (
+        services.map((key, i) => (
           <div class="flex flex-col gap-4">
             <h1
-              class="text-5xl font-medium border-b-2 py-4 px-2 border-white/20"
+              class="text-2xl lg:text-5xl font-medium border-b-2 py-4 px-2 border-white/20"
               data-aos="fade-up"
             >
-              {s.title}
+              {t.services.items[key.title].title}
             </h1>
 
-            <ul class="flex flex-col flex-wrap gap-8 text-2xl px-4 font-manrope">
-              {s.items.map((item) => (
-                <li 
-                
-                data-aos="zoom-in"
-                class="px-4 py-2 bg-white/10 rounded-lg w-fit">{item}</li>
+            <ul class="flex flex-col flex-wrap gap-8 text-sm lg:text-2xl px-4 font-manrope">
+              {key.items.map((item) => (
+                <li
+                  data-aos="zoom-in"
+                  class="px-4 py-2 bg-white/10 rounded-lg w-fit"
+                >
+                  {t.services.items[key.title].items[item]}
+                </li>
               ))}
             </ul>
           </div>

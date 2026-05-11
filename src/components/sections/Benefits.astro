@@ -1,56 +1,60 @@
 ---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
 const benefits = [
-  {
-    title: "Real Cost Reduction",
-    description:
-      "Reduce operational costs by 30% to 60% without compromising quality.",
-  },
-  {
-    title: "Time Zone Alignment",
-    description: "Work in real time with teams aligned to U.S. business hours.",
-  },
-  {
-    title: "Bilingual Talent",
-    description:
-      "Highly skilled English-Spanish professionals trained in your industry.",
-  },
-  {
-    title: "Operational Efficiency",
-    description:
-      "Improve productivity with engineered workflows and automation.",
-  },
-  {
-    title: "Scalability On Demand",
-    description: "Grow or reduce your team based on business needs.",
-  },
-  {
-    title: "Full Visibility",
-    description: "Access real-time dashboards, KPIs, and performance reports.",
-  },
+  "realCostReduction",
+  "timeZoneAlignment",
+  "bilingualTalent",
+  "operationalEfficiency",
+  "scalabilityOnDemand",
+  "fullVisibility",
 ];
 ---
 
-<section class="py-40 px-8 font-DM flex flex-col gap-16 max-w-7xl m-auto">
-  <h1 class="font-manrope text-6xl text-center font-medium" data-aos="fade-up">
-    Why Leading Companies <span> Choose</span> Nearshore <span> with Us </span>
+<section
+  class="py-20 lg:py-40 px-4 lg:px-8 font-DM flex flex-col gap-16 max-w-7xl m-auto"
+>
+  <h1
+    class="font-manrope text-2xl lg:text-6xl text-center font-medium"
+    data-aos="fade-up"
+  >
+    {t.benefits.title.line1}
+    <span> {t.benefits.title.highlight1}</span>
+    {t.benefits.title.line2}
+    <span>{t.benefits.title.highlight2} </span>
   </h1>
 
-  <div class="grid grid-cols-2 gap-6">
+  <div class="hidden lg:grid grid-cols-2 gap-6">
     {
       benefits.map((b, i) => {
         const indexCards = [1, 2, 5];
 
         return (
           <div
-
-          data-aos="zoom-in"
+            data-aos="zoom-in"
             class={`flex flex-col items-center justify-center text-center p-4 ${indexCards.includes(i) ? "bg-indigo-500 text-white" : "shadow border border-neutral-100"} h-52 rounded`}
           >
-            <h1 class="text-3xl">{b.title}</h1>
-            <p class="text-lg">{b.description}</p>
+            <h1 class="text-3xl">{t.benefits.items[b].title}</h1>
+            <p class="text-lg">{t.benefits.items[b].description}</p>
           </div>
         );
       })
+    }
+  </div>
+
+  <div class="lg:hidden grid grid-cols-1 gap-6">
+    {
+      benefits.map((b, i) => (
+        <div
+          data-aos="zoom-in"
+          class={`flex flex-col items-center justify-center text-center p-4 ${i % 2 == 0 ? "bg-indigo-500 text-white" : "shadow border border-neutral-100"} h-52 rounded`}
+        >
+          <h1 class="text-3xl">{t.benefits.items[b].title}</h1>
+          <p class="text-lg">{t.benefits.items[b].description}</p>
+        </div>
+      ))
     }
   </div>
 </section>

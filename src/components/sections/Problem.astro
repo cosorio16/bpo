@@ -1,4 +1,5 @@
 ---
+import { useTranslations } from "../../i18n/utils";
 import CreditCardIcon from "../../icons/CreditCardIcon.astro";
 import UsersLimited from "../../icons/UsersLimited.astro";
 import DelayIcon from "../../icons/DelayIcon.astro";
@@ -7,69 +8,72 @@ import UsersRaysIcon from "../../icons/UsersRaysIcon.astro";
 
 const items = [
   {
-    text: "Rising operational costs in the U.S.",
+    key: "risingCosts",
     icon: CreditCardIcon,
   },
   {
-    text: "",
+    key: "",
     icon: null,
   },
   {
-    text: "",
+    key: "",
     icon: null,
   },
   {
-    text: "Lack of scalable teams",
+    key: "scalableTeams",
     icon: UsersLimited,
   },
   {
-    text: "Delays due to offshore time zone gaps",
+    key: "timezoneDelays",
     icon: DelayIcon,
   },
   {
-    text: "",
+    key: "",
     icon: null,
   },
   {
-    text: "",
+    key: "",
     icon: null,
   },
   {
-    text: "Poor integration between departments",
+    key: "departmentIntegration",
     icon: PuzzleIcon,
   },
   {
-    text: "High employee turnover",
+    key: "employeeTurnover",
     icon: UsersRaysIcon,
   },
 ];
+
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
 ---
 
 <section
-  class="px-8 py-40 flex flex-col gap-5 items-center text-center font-DM"
+  class="px-2 py-40 lg:px-8 flex flex-col gap-5 items-center text-center font-DM"
 >
   <div class="flex flex-col gap-2">
-    <h1 class="text-6xl" data-aos="fade-up">
-      Your Operations Are <span class="text-indigo-500 font-semibold"
-        >Costing</span
+    <h1 class="text-5xl lg:text-6xl" data-aos="fade-up">
+      {t.problem.title.line1}
+      <span class="text-indigo-500 font-semibold"
+        >{t.problem.title.highlight}</span
       >
       <br />
-      More Than They Should
+      {t.problem.title.line2}
     </h1>
 
     <h2
-      class="text-2xl text-neutral-600"
+      class="text-xl lg:text-2xl text-neutral-600"
       data-aos="fade-up"
       data-aos-delay="100"
     >
-      Inefficiencies, high labor costs, and fragmented processes are slowing
-      your growth.
+      {t.problem.subtitle}
     </h2>
   </div>
 
-  <div class="grid grid-cols-2 gap-6 w-full px-4">
+  <div class="hidden lg:grid grid-cols-2 gap-6 w-full px-4">
     {
-      items.map(({ text, icon: Icon }, i) => (
+      items.map(({ key, icon: Icon }, i) => (
         <div
           data-aos={i % 2 == 0 ? "fade-left" : "fade-right"}
           class={`h-32 w-full text-3xl 2xl:text-4xl flex items-center justify-center gap-3`}
@@ -79,13 +83,23 @@ const items = [
               <Icon sizes="45" />
             </span>
           )}
-          {text && <h1 class="whitespace-nowrap">{text}</h1>}
+          {key && <h1 class="whitespace-nowrap">{t.problem.items[key]}</h1>}
         </div>
       ))
     }
   </div>
 
-  <p class="underline text-lg text-indigo-500">
-    Most outsourcing providers execute tasks. Very few improve your operations.
+  <div class="flex flex-col gap-3">
+    {
+      items.map((i) => (
+        <div class={`${i.key == "" ? "hidden": "text-start bg-indigo-50 text-indigo-500 rounded-full py-2 px-4"}`}>
+          <p>{t.problem.items[i.key]}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="text-xl text-indigo-500">
+    {t.problem.footer}
   </p>
 </section>

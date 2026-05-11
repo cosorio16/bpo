@@ -1,0 +1,109 @@
+---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+---
+
+<section
+  id="contact"
+  class="grid grid-cols-1 lg:grid-cols-2 max-w-7xl m-auto font-DM min-h-[60dvh] items-center py-20"
+>
+  <div
+    class="flex flex-col gap-2 bg-indigo-500 text-white h-full p-8 justify-center items-center"
+  >
+    <h1 data-aos="zoom-out" class="text-6xl lg:text-8xl font-bold">{t.contact.title}</h1>
+    <p
+      data-aos="zoom-in"
+      class="text-sm lg:text-base bg-neutral-50/10 text-neutral-100 px-4 py-2 rounded-full border border-neutral-200 w-fit font-manrope"
+    >
+      {t.contact.description}
+    </p>
+  </div>
+  <form
+    action=""
+    id="contact-form"
+    class="flex flex-col gap-1 justify-center p-8 border border-neutral-200 h-full"
+  >
+    <div class="grid grid-cols-2 gap-2">
+      <div class="flex flex-col">
+        <label data-aos="fade-up" for="name">{t.contact.form.labels.name}</label
+        >
+        <input
+          type="text"
+          data-aos="fade-up"
+          placeholder={t.contact.form.placeholders.name}
+          id="
+          name"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label data-aos="fade-up" for="lastName"
+          >{t.contact.form.labels.lastName}</label
+        >
+        <input
+          type="text"
+          data-aos="fade-up"
+          placeholder={t.contact.form.placeholders.lastName}
+          id="lastName"
+        />
+      </div>
+    </div>
+    <label data-aos="fade-up" for="email">{t.contact.form.labels.email}</label>
+    <input
+      type="email"
+      data-aos="fade-up"
+      placeholder={t.contact.form.placeholders.email}
+      id="email"
+    />
+    <label data-aos="fade-up" for="phone">{t.contact.form.labels.phone}</label>
+    <input
+      type="number"
+      data-aos="fade-up"
+      name=""
+      id="phone"
+      placeholder={t.contact.form.placeholders.phone}
+    />
+    <label data-aos="fade-up" for="opinion"
+      >{t.contact.form.labels.opinion}</label
+    >
+    <textarea
+      data-aos="fade-up"
+      name=""
+      id="opinion"
+      placeholder={t.contact.form.placeholders.opinion}
+      class="h-40"></textarea>
+
+    <button
+      data-aos="fade-up"
+      type="submit"
+      class="py-4 text-xl text-white bg-indigo-500 rounded cursor-pointer"
+      >{t.contact.form.button}</button
+    >
+  </form>
+</section>
+
+<style>
+  label {
+    color: #666;
+  }
+
+  label:has(+ input:focus),
+  label:has(+ textarea:focus) {
+    color: oklch(58.5% 0.233 277.117);
+  }
+  input,
+  textarea {
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 16px;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline-color: oklch(58.5% 0.233 277.117);
+  }
+</style>

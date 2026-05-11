@@ -1,0 +1,461 @@
+{
+  "header": {
+    "brand": "INVERCON",
+
+    "links": {
+      "services": "Servicios",
+      "industries": "Industrias",
+      "howItWorks": "Cómo Funciona",
+      "infrastructure": "Infraestructura",
+      "pricing": "Precios",
+      "contact": "Contacto",
+      "faq": "FAQ"
+    },
+
+    "buttons": {
+      "bookCall": "Contactar"
+    }
+  },
+
+  "hero": {
+    "title": {
+      "line1": "Escala Tus Operaciones con",
+      "highlight": "Precisión de Ingeniería"
+    },
+
+    "subtitle": "Servicios BPO nearshore diseñados para reducir costos, optimizar flujos de trabajo y entregar resultados operacionales medibles.",
+
+    "buttons": {
+      "strategyCall": "Agendar Llamada",
+      "analysis": "Obtener un Análisis"
+    },
+
+    "stats": {
+      "trusted": "Confianza de empresas estadounidenses en logística, SaaS, salud y finanzas",
+      "costReduction": "Hasta 60% de reducción en costos operacionales",
+      "timezone": "Colaboración en tiempo real en tu zona horaria"
+    }
+  },
+
+  "problem": {
+    "title": {
+      "line1": "Tus Operaciones Están",
+      "highlight": "Costando",
+      "line2": "Más de lo Debido"
+    },
+
+    "subtitle": "Las ineficiencias, los altos costos laborales y los procesos fragmentados están frenando tu crecimiento.",
+
+    "items": {
+      "risingCosts": "Costos operacionales en aumento",
+      "scalableTeams": "Falta de equipos escalables",
+      "timezoneDelays": "Retrasos por brechas de zona horaria",
+      "departmentIntegration": "Pobre integración entre departamentos",
+      "employeeTurnover": "Alta rotación de empleados"
+    },
+
+    "footer": "La mayoría de los proveedores de outsourcing ejecutan tareas. Muy pocos mejoran tus operaciones."
+  },
+
+  "solution": {
+    "title": {
+      "line1": "Diseñamos Tus Operaciones para",
+      "highlight": "Rendimiento y Escala"
+    },
+
+    "subtitle": "Un modelo BPO nearshore construido sobre datos, optimización de procesos y colaboración en tiempo real.",
+
+    "description": "En INVERCON Logistic, diseñamos, implementamos y administramos sistemas operacionales que integran logística, servicio al cliente y flujos de trabajo administrativos bajo un marco estratégico unificado.",
+
+    "elements": {
+      "processEngineering": "Enfoque de ingeniería de procesos",
+      "kpiExecution": "Ejecución basada en KPIs",
+      "integratedOperations": "Modelo de operaciones integradas",
+      "continuousOptimization": "Optimización continua"
+    }
+  },
+
+  "benefits": {
+    "title": {
+      "line1": "Por Qué las Empresas Líderes",
+      "highlight1": "Eligen",
+      "line2": "Nearshore con",
+      "highlight2": "Nosotros"
+    },
+
+    "items": {
+      "realCostReduction": {
+        "title": "Reducción Real de Costos",
+        "description": "Reduce los costos operacionales del 30% al 60% sin comprometer la calidad."
+      },
+
+      "timeZoneAlignment": {
+        "title": "Alineación de Zona Horaria",
+        "description": "Trabaja en tiempo real con equipos alineados al horario comercial de EE.UU."
+      },
+
+      "bilingualTalent": {
+        "title": "Talento Bilingüe",
+        "description": "Profesionales altamente capacitados en inglés-español entrenados en tu industria."
+      },
+
+      "operationalEfficiency": {
+        "title": "Eficiencia Operacional",
+        "description": "Mejora la productividad con flujos de trabajo diseñados y automatización."
+      },
+
+      "scalabilityOnDemand": {
+        "title": "Escalabilidad Bajo Demanda",
+        "description": "Aumenta o reduce tu equipo según las necesidades del negocio."
+      },
+
+      "fullVisibility": {
+        "title": "Visibilidad Completa",
+        "description": "Accede a dashboards en tiempo real, KPIs y reportes de desempeño."
+      }
+    }
+  },
+
+  "services": {
+    "title": "Soporte Operacional de Punta a Punta",
+
+    "subtitle": "Servicios integrados diseñados para optimizar cada función crítica de tu negocio.",
+
+    "items": {
+      "logisticsTransportation": {
+        "title": "Gestión de Logística y Transporte",
+
+        "items": {
+          "routeOptimization": "Optimización de rutas y coordinación de envíos",
+          "fleetManagement": "Gestión de flotas y transportistas",
+          "coldChain": "Logística de cadena de frío",
+          "warehouseOperations": "Operaciones de almacén y control de inventario",
+          "importExport": "Soporte de procesos de importación/exportación"
+        }
+      },
+
+      "customerExperience": {
+        "title": "Gestión de Experiencia del Cliente (CX)",
+
+        "items": {
+          "multichannelSupport": "Soporte multicanal (voz, chat, email)",
+          "bilingualService": "Servicio al cliente bilingüe",
+          "slaPerformance": "Desempeño basado en SLA",
+          "qaCoaching": "QA y coaching continuo"
+        }
+      },
+
+      "backOffice": {
+        "title": "Operaciones de Back Office",
+
+        "items": {
+          "accounts": "Cuentas por pagar y por cobrar",
+          "payroll": "Nómina y soporte de RRHH",
+          "dataEntry": "Entrada de datos y reportes",
+          "financialWorkflows": "Flujos de trabajo financieros y administrativos"
+        }
+      },
+
+      "technicalSupport": {
+        "title": "Soporte Técnico (Nivel 1 y 2)",
+
+        "items": {
+          "helpDesk": "Servicios de mesa de ayuda IT",
+          "infrastructureMonitoring": "Monitoreo de infraestructura",
+          "systemSupport": "Soporte de sistemas y software",
+          "continuityManagement": "Gestión de continuidad operacional"
+        }
+      },
+
+      "salesLeadGeneration": {
+        "title": "Soporte de Ventas y Generación de Leads",
+
+        "items": {
+          "leadQualification": "Calificación de leads",
+          "crmManagement": "Gestión de CRM",
+          "outboundInbound": "Soporte outbound e inbound",
+          "pipelineAcceleration": "Aceleración de pipeline"
+        }
+      }
+    }
+  },
+
+  "differentiation": {
+    "title": {
+      "line1": "No Somos un Call Center. Somos una Empresa de",
+      "highlight": "Ingeniería Operacional."
+    },
+
+    "traditionalBpo": {
+      "title": "BPO Tradicional",
+
+      "items": {
+        "taskExecution": "Ejecución de tareas",
+        "limitedVisibility": "Visibilidad limitada",
+        "reactiveSupport": "Soporte reactivo"
+      }
+    },
+
+    "invercon": {
+      "badge": "Diseño y optimización de procesos",
+
+      "title": "INVERCON Logistic",
+
+      "items": {
+        "dataDriven": "Toma de decisiones basada en datos",
+        "performanceImprovement": "Mejora proactiva del desempeño",
+        "integratedSystems": "Sistemas operacionales integrados"
+      }
+    }
+  },
+
+  "results": {
+    "title": {
+      "line1": "Resultados",
+      "highlight": "Comprobados",
+      "line2": "en Diversas Industrias"
+    },
+
+    "items": {
+      "healthcare": {
+        "title": "Empresa de Salud",
+
+        "results": {
+          "payrollReduction": "64% de reducción en costos de nómina.",
+          "billingDecrease": "48% de disminución en rechazos de facturación."
+        }
+      },
+
+      "saas": {
+        "title": "Startup SaaS",
+
+        "results": {
+          "costSavings": "58% de ahorro en costos.",
+          "leadIncrease": "42% de aumento en leads entrantes."
+        }
+      },
+
+      "legal": {
+        "title": "Firma Legal",
+
+        "results": {
+          "costReduction": "62% de reducción en costos operacionales.",
+          "backlogEliminated": "Backlog de contratos eliminado en 8 semanas."
+        }
+      },
+
+      "ecommerce": {
+        "title": "Empresa de E-commerce",
+
+        "results": {
+          "adminSavings": "55% de ahorro en costos administrativos.",
+          "financialCycles": "Ciclos de cierre financiero más rápidos."
+        }
+      }
+    }
+  },
+
+  "costs": {
+    "title": {
+      "line1": "Descubre Cuánto Puedes",
+      "highlight": "Ahorrar"
+    },
+
+    "subtitle": "Calcula tus ahorros operacionales en minutos.",
+
+    "keys": {
+      "laborCosts": "Reduce los costos laborales hasta en un 60%",
+      "infrastructureExpenses": "Elimina gastos de infraestructura",
+      "turnoverCosts": "Reduce costos relacionados con la rotación",
+      "roiIncrease": "Aumenta el ROI en los primeros 90 días"
+    },
+
+    "button": "Obtener Tu Análisis"
+  },
+
+  "howItWorks": {
+    "title": {
+      "line1": "Simple.",
+      "line2": "Rápido.",
+      "line3": "Escalable."
+    },
+
+    "steps": {
+      "discovery": {
+        "step": "1",
+        "title": "Llamada de Descubrimiento",
+        "description": "Analizamos tus operaciones actuales e identificamos oportunidades."
+      },
+
+      "customStrategy": {
+        "step": "2",
+        "title": "Estrategia Personalizada",
+        "description": "Diseñamos una solución nearshore a tu medida."
+      },
+
+      "pilotLaunch": {
+        "step": "3",
+        "title": "Lanzamiento de Equipo Piloto",
+        "description": "Comienza con un equipo pequeño de alto impacto."
+      },
+
+      "scaleOperations": {
+        "step": "4",
+        "title": "Escala las Operaciones",
+        "description": "Expande según el desempeño y los resultados."
+      }
+    }
+  },
+
+  "target": {
+    "title": {
+      "line1": "Diseñado para Industrias de",
+      "highlight": "Alto Crecimiento",
+      "line2": ""
+    },
+
+    "items": {
+      "logistics": "Logística y Transporte",
+      "saas": "SaaS y Tecnología",
+      "healthcare": "Salud",
+      "retail": "Retail y E-commerce",
+      "fintech": "Fintech",
+      "professionalServices": "Servicios Profesionales"
+    }
+  },
+
+  "infrastructure": {
+    "title": {
+      "line1": "Infraestructura de",
+      "highlight1": "Nivel Empresarial",
+      "line2": "y",
+      "highlight2": "Seguridad"
+    },
+
+    "features": {
+      "soc2": "Procesos alineados con SOC 2 e ISO",
+      "secureData": "Gestión segura de datos",
+      "redundantConnectivity": "Conectividad de alta velocidad",
+      "cloudTools": "Herramientas de colaboración",
+      "realTimeReporting": "Sistemas de reportes en tiempo real"
+    }
+  },
+
+  "contact": {
+    "title": "Contáctanos",
+
+    "description": "Soluciones modernas para impulsar negocios",
+
+    "form": {
+      "labels": {
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo Electrónico",
+        "phone": "Teléfono",
+        "opinion": "Opinión"
+      },
+
+      "placeholders": {
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "email": "Tu Correo Electrónico",
+        "phone": "Tu Número de Teléfono",
+        "opinion": "Tu Opinión (opcional)"
+      },
+
+      "button": "Enviar"
+    }
+  },
+
+  "faq": {
+    "title": "Preguntas Frecuentes",
+
+    "questions": {
+      "nearshoreBpo": {
+        "question": "¿Qué es BPO Nearshore?",
+        "answer": "Outsourcing a países cercanos, permitiendo colaboración en tiempo real y alineación cultural."
+      },
+
+      "startTime": {
+        "question": "¿Qué tan rápido podemos comenzar?",
+        "answer": "Típicamente entre 2 y 4 semanas después de la consulta inicial."
+      },
+
+      "quality": {
+        "question": "¿Cómo aseguran la calidad?",
+        "answer": "A través de contratación rigurosa, KPIs, procesos de QA y monitoreo continuo."
+      },
+
+      "scalability": {
+        "question": "¿Podemos escalar el equipo?",
+        "answer": "Sí. Los equipos son completamente flexibles y escalables."
+      },
+
+      "difference": {
+        "question": "¿Qué los hace diferentes?",
+        "answer": "Diseñamos y optimizamos operaciones, no solo ejecutamos tareas."
+      }
+    }
+  },
+
+  "cta": {
+    "title": "Comienza a Construir una Operación Más Eficiente Hoy",
+
+    "subtitle": "Descubre cuánto puedes ahorrar y qué tan rápido puedes escalar.",
+
+    "buttons": {
+      "analysis": "Obtener un Análisis",
+      "strategyCall": "Agendar Llamada"
+    }
+  },
+
+  "footer": {
+    "sections": {
+      "company": {
+        "title": "Empresa",
+
+        "links": {
+          "about": "Nosotros",
+          "careers": "Carreras",
+          "contact": "Contacto"
+        }
+      },
+
+      "services": {
+        "title": "Servicios",
+
+        "links": {
+          "technicalSupport": "Soporte Técnico",
+          "logistics": "Logística",
+          "backOffice": "Back Office",
+          "customerExperience": "Experiencia del Cliente"
+        }
+      },
+
+      "resources": {
+        "title": "Recursos",
+
+        "links": {
+          "caseStudies": "Casos de Estudio",
+          "blog": "Blog",
+          "faq": "Preguntas Frecuentes"
+        }
+      },
+
+      "legal": {
+        "title": "Legal",
+
+        "links": {
+          "privacyPolicy": "Política de Privacidad",
+          "termsOfService": "Términos de Servicio"
+        }
+      }
+    },
+
+    "bottom": {
+      "copyright": "© 2026 INVERCON Logistic. Todos los derechos reservados.",
+
+      "description": "Ingeniería Operacional Nearshore para empresas estadounidenses."
+    }
+  }
+}

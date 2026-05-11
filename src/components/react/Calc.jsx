@@ -26,13 +26,13 @@ function Calc() {
     });
   };
   return (
-    <div className="font-DM flex flex-col gap-4 w-full h-full">
+    <div className="font-DM flex flex-col gap-4 w-full h-full p-2">
       <div>
         <div className="flex flex-col gap-1">
           <p className="w-fit text-emerald-500 bg-emerald-50 px-4 py-1 rounded-full border border-emerald-200">
             You could save monthly
           </p>
-          <span className="text-7xl font-manrope text-indigo-500 font-medium px-2">
+          <span className="text-6xl lg:text-7xl font-manrope text-indigo-500 font-medium px-2">
             <NumberFlow
               value={monthlySavings}
               format={{
@@ -57,7 +57,7 @@ function Calc() {
 
           <div className="flex items-center justify-between border-b pb-4 border-neutral-200">
             <span className="font-medium text-2xl text-neutral-500">
-              With cost:
+              With us:
             </span>
             {/* <NumberFlow value={newCost} /> */}
 

@@ -1,65 +1,55 @@
-<section class="px-8 py-40 max-w-7xl m-auto font-DM flex flex-col gap-8">
-  <h1 class="text-6xl text-center font-medium" data-aos="fade-up">
-    Proven
+---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
+const items = [
+  {
+    key: "healthcare",
+    items: ["payrollReduction", "billingDecrease"],
+  },
+  {
+    key: "saas",
+    items: ["costSavings", "leadIncrease"],
+  },
+  {
+    key: "legal",
+    items: ["costReduction", "backlogEliminated"],
+  },
+  {
+    key: "ecommerce",
+    items: ["adminSavings", "financialCycles"],
+  },
+];
+---
+
+<section class="px-8 py-20 lg:py-40 max-w-7xl m-auto font-DM flex flex-col gap-8">
+  <h1 class="text-2xl lg:text-6xl text-center font-medium" data-aos="fade-up">
+    {t.results.title.line1}
     <span class="font-manrope text-indigo-500 font-semibold results">
-      Results
+      {t.results.title.highlight}
     </span>
-    Across Industries
+    {t.results.title.line2}
   </h1>
 
-  <div class="grid grid-cols-2 gap-8 gridContainer">
-    <div data-aos="zoom-out">
-      <h2>Healthcare Company</h2>
-      <p><span> 64% </span>payroll cost reduction.</p>
-      <p><span> 48%</span> decrease in billing rejections.</p>
-    </div>
-    <div data-aos="zoom-out">
-      <h2>SaaS Startup</h2>
-      <p><span> 58%</span> cost savings.</p>
-      <!-- <p>Product launched <span> 6 </span> weeks earlier.</p> -->
-      <p><span> 42%</span> increase in inbound leads.</p>
-    </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 gridContainer">
+    {
+      items.map((item) => (
+        <div
+          data-aos="zoom-out"
+          class="border px-4 py-8 border-neutral-200 rounded flex flex-col gap-3"
+        >
+          <h2 class="text-indigo-500 lg:text-5xl text-2xl">
+            {t.results.items[item.key].title}
+          </h2>
 
-    <div data-aos="zoom-out">
-      <h2>Legal Firm</h2>
-      <p><span> 62%</span> operational cost reduction.</p>
-      <p>Contract backlog eliminated in <span> 8</span> weeks.</p>
-    </div>
-
-    <div data-aos="zoom-out">
-      <h2>E-commerce Company</h2>
-      <p><span> 55%</span> savings in administrative costs.</p>
-      <p>Faster financial closing cycles.</p>
-    </div>
+          <div class="flex flex-col gap-1">
+            {item.items.map((sub) => (
+              <p class="text-lg lg:text-2xl">{t.results.items[item.key].results[sub]}</p>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>
-
-<style>
-  p {
-    font-size: 2rem;
-    color: oklch(43.9% 0 0);
-  }
-
-  span {
-    color: oklch(58.5% 0.233 277.117);
-    font-size: 3rem;
-  }
-
-  .results {
-    font-size: 4.2rem;
-  }
-
-  h2 {
-    font-size: 3.1rem;
-    color: oklch(37.1% 0 0);
-  }
-
-  div {
-    border-bottom: 2px solid oklch(92.2% 0 0);
-    padding: 24px 0px;
-  }
-
-  .gridContainer {
-    border: 0;
-  }
-</style>

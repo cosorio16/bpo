@@ -1,43 +1,50 @@
-<section class="px-8 py-40 max-w-7xl m-auto font-manrope flex flex-col gap-8">
-  <h1 class="text-6xl text-center font-semibold" data-aos="fade-up">
-    Not a Call Center. An Operational <br />
+---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+---
+
+<section class="lg:px-8 px-4 lg:py-40 py-20 max-w-7xl m-auto font-manrope flex flex-col gap-8">
+  <h1 class="text-3xl lg:text-5xl text-center font-semibold" data-aos="fade-up">
+    {t.differentiation.title.line1}
+    <br />
     <span class="text-indigo-500 font-DM font-medium">
-      Engineering Company.
+      {t.differentiation.title.highlight}
     </span>
   </h1>
 
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
     <div
-      class="border border-r-0 border-neutral-200 py-12 px-8 h-96 justify-center flex flex-col gap-4"
+      class="border border-r-0 border-neutral-200 py-12 px-8 min-h-96 justify-center flex flex-col gap-4"
     >
       <h2
         class="text-4xl font-DM font-semibold text-neutral-500"
         data-aos="fade-up"
       >
-        Traditional BPO
+        {t.differentiation.traditionalBpo.title}
       </h2>
-      <ul class="text-2xl text-neutral-400">
+      <ul class="text-lg lg:text-2xl text-neutral-400">
         <li data-aos="zoom-in" class="py-2 border-b-4 border-black/10">
-          Task execution
+          {t.differentiation.traditionalBpo.items.taskExecution}
         </li>
         <li data-aos="zoom-in" class="py-2 border-b-4 border-black/10">
-          Limited visibility
+          {t.differentiation.traditionalBpo.items.limitedVisibility}
         </li>
         <li data-aos="zoom-in" class="py-2 border-b-4 border-black/10">
-          Reactive support
+          {t.differentiation.traditionalBpo.items.reactiveSupport}
         </li>
       </ul>
     </div>
 
     <div
-      class="border border-neutral-200 py-12 px-8 h-96 justify-center flex flex-col gap-4 bg-indigo-500 text-white relative"
+      class="pt-20 border border-neutral-200 py-12 px-8 min-h-96 justify-center flex flex-col gap-4 bg-indigo-500 text-white relative"
     >
       <div class="flex flex-col gap-2">
         <div
-        data-aos="zoom-in"
+          data-aos="zoom-in"
           class="flex items-center gap-3 px-4 py-1 bg-white text-indigo-500 font-medium rounded-full w-fit absolute top-4 right-4"
         >
-          Process design and optimization
+          {t.differentiation.invercon.badge}
 
           <div class="size-3 bg-indigo-600 rounded-full relative">
             <div
@@ -47,19 +54,19 @@
           </div>
         </div>
         <h2 class="text-4xl font-DM font-semibold" data-aos="fade-up">
-          INVERCON Logistic
+          {t.differentiation.invercon.title}
         </h2>
       </div>
 
-      <ul class="text-2xl">
+      <ul class="text-lg lg:text-2xl">
         <li data-aos="zoom-in" class="py-2 border-b-4 border-white/10">
-          Data-driven decision making
+          {t.differentiation.invercon.items.dataDriven}
         </li>
         <li data-aos="zoom-in" class="py-2 border-b-4 border-white/10">
-          Proactive performance improvement
+          {t.differentiation.invercon.items.performanceImprovement}
         </li>
         <li data-aos="zoom-in" class="py-2 border-b-4 border-white/10">
-          Integrated operational systems
+          {t.differentiation.invercon.items.integratedSystems}
         </li>
       </ul>
     </div>

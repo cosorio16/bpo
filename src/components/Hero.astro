@@ -1,3 +1,9 @@
+---
+import { useTranslations } from "../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+---
+
 <div class="w-full relative font-manrope h-dvh max-h-200">
   <div
     id="home"
@@ -8,17 +14,17 @@
     >
     </div>
 
-    <div class="flex flex-col items-center gap-3 w-full">
-      <h1 class="text-6xl font-medium font-manrope" data-aos="fade-up">
-        Scale Your Operations with <br />
+    <div class="flex flex-col items-center gap-3 w-full p-1">
+      <h1 class="text-3xl lg:text-6xl font-medium font-manrope" data-aos="fade-up">
+        {t.hero.title.line1}
+        <br />
         <span class="text-indigo-500 font-semibold font-DM">
-          Engineering Precision</span
+          {t.hero.title.highlight}</span
         >
       </h1>
 
-      <h2 class="text-lg w-1/2" data-aos="fade-up" data-aos-delay="100">
-        Nearshore BPO services designed to reduce costs, optimize
-        workflows, and deliver measurable operational results.
+      <h2 class="text-lg lg:w-1/2" data-aos="fade-up" data-aos-delay="100">
+        {t.hero.subtitle}
       </h2>
     </div>
 
@@ -28,17 +34,17 @@
       scalable, high-performance systems.
     </p> -->
 
-    <div class="flex items-center gap-8 text-xl">
+    <div class="flex flex-col lg:flex-row items-center gap-8 text-xl">
       <button
         data-aos="fade-down"
         class="ring-2 ring-indigo-500 px-8 py-3 rounded-full bg-indigo-500 text-white"
       >
-        Book a Strategy Call
+        {t.hero.buttons.strategyCall}
       </button>
       <button
         data-aos="fade-down"
         class="ring-2 px-8 py-3 rounded-full text-white"
-        >Get a Analysis</button
+        >{t.hero.buttons.analysis}</button
       >
     </div>
   </div>

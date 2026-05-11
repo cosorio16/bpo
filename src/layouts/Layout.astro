@@ -1,6 +1,6 @@
 ---
-import "../global.css";
 import "aos/dist/aos.css";
+import "../global.css";
 ---
 
 <!doctype html>
@@ -10,22 +10,29 @@ import "aos/dist/aos.css";
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <!-- <link rel="icon" href="/favicon.ico" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
 
-    <meta name="generator" content={Astro.generator} /><title>
-      INVERCON
-    </title></head
-  >
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="Content-Language" content="es" />
+    <html lang="es" translate="no">
+      <meta name="generator" content={Astro.generator} />
+      <title>INVERCON</title>
+    </html>
 
-  <body>
-    <slot />
+    <body class="text-[#333]">
+      <slot />
 
-    <script>
-      import aos from "aos";
+      <script>
+        import aos from "aos";
 
-      aos.init({
-        once: false,
-        duration: 500,
-      });
-    </script>
-  </body>
+        aos.init({
+          once: true,
+          duration: 500,
+        });
+      </script>
+    </body>
+  </head>
 </html>

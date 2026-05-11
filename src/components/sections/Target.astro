@@ -1,31 +1,38 @@
 ---
+import { useTranslations } from "../../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
 const targets = [
-  { name: "Logistics & Transportation", icon: null },
-  { name: "SaaS & Technology", icon: null },
-  { name: "Healthcare", icon: null },
-  { name: "Retail & E-commerce", icon: null },
-  { name: "Fintech", icon: null },
-  { name: "Professional Services", icon: null },
+  { key: "logistics", icon: null },
+  { key: "saas", icon: null },
+  { key: "healthcare", icon: null },
+  { key: "retail", icon: null },
+  { key: "fintech", icon: null },
+  { key: "professionalServices", icon: null },
 ];
 ---
 
-<section 
-id="industries"
-class="py-40 px-8 max-w-7xl m-auto font-manrope flex flex-col gap-20">
-  <h1 class="text-7xl" data-aos="fade-up">
-    Built for <span class="text-indigo-500 font-medium"> High-Growth</span>
-    <br /> Industries
+<section
+  id="industries"
+  class="py-20 lg:py-40 px-8 max-w-7xl m-auto font-manrope flex flex-col lg:gap-20 gap-12"
+>
+  <h1 class="text-4xl lg:text-7xl" data-aos="fade-up">
+    {t.target.title.line1}
+    <span class="text-indigo-500 font-medium"> {t.target.title.highlight}</span>
+    <br />
+    {t.target.title.line2}
   </h1>
 
   <div class="font-DM flex flex-col gap-4">
     {
-      targets.map((t, i) => (
+      targets.map((target, i) => (
         <div
           data-aos="zoom-in"
           data-aos-delay={100 * i}
-          class="py-8 px-12 text-4xl bg-indigo-50 text-indigo-500 font-medium w-fit rounded-full"
+          class="lg:py-8 py-6 lg:px-12 px-8 text-lg lg:text-4xl bg-indigo-50 text-indigo-500 font-medium w-fit rounded-full"
         >
-          <p>{t.name}</p>
+          <p>{t.target.items[target.key]}</p>
         </div>
       ))
     }

@@ -1,19 +1,45 @@
 ---
+import { useTranslations } from "../i18n/utils";
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
 const links = [
-  "Services",
-  "Industries",
-  "How It Works",
-  "Infrastructure",
-  "Pricing",
-  "FAQ",
+  {
+    key: "services",
+    href: "#services",
+  },
+  {
+    key: "industries",
+    href: "#industries",
+  },
+  {
+    key: "howItWorks",
+    href: "#howitworks",
+  },
+  {
+    key: "infrastructure",
+    href: "#infrastructure",
+  },
+  {
+    key: "pricing",
+    href: "#pricing",
+  },
+  {
+    key: "contact",
+    href: "#contact",
+  },
+  {
+    key: "faq",
+    href: "#faq",
+  },
 ];
 ---
 
 <header
   class="flex items-center justify-between h-20 font-DM fixed top-0 w-screen z-10 px-8 transition"
 >
-  <div class="w-32 font-manrope font-bold" data-aos="fade-right">INVERCON</div>
-  <nav class="grow">
+  <a href="#" class="w-32 font-manrope font-bold" data-aos="fade-right">INVERCON</a>
+  <nav class="grow hidden lg:block">
     <ul class="flex items-center justify-center gap-12">
       {
         links.map((l, i) => (
@@ -21,10 +47,10 @@ const links = [
             <a
               data-aos="zoom-in"
               data-aos-delay={100 * i}
-              href={`#${l.toLowerCase().replaceAll(" ", "")}`}
+              href={`#${l.key.toLowerCase().replaceAll(" ", "")}`}
               class="border-b border-transparent hover:border-white transition"
             >
-              {l}
+              {t.header.links[l.key]}
             </a>
           </li>
         ))
@@ -35,13 +61,14 @@ const links = [
     data-aos="fade-left"
     class="bg-indigo-500 text-white py-2 rounded-full font-medium w-32"
   >
-    Book a Call
+    {t.header.buttons.bookCall}
   </button>
 </header>
 
 <style>
   header {
     color: white;
+    transition: background .323s ease-in-out;
   }
 
   header.active {
@@ -62,7 +89,7 @@ const links = [
     document.addEventListener("scroll", () => {
       scroll = window.scrollY;
 
-      if (scroll >= 800) {
+      if (scroll >= 600) {
         header?.classList.add("active");
       } else {
         header?.classList.remove("active");
