@@ -91,15 +91,21 @@ const t = await useTranslations(locale);
 
   <div class="lg:hidden flex flex-col gap-3">
     {
-      items.map((i) => (
-        <div class={`${i.key == "" ? "hidden": "text-start bg-indigo-50 text-indigo-500 rounded-full py-2 px-4"}`}>
-          <p>{t.problem.items[i.key]}</p>
+      items.map((item, i) => (
+        <div
+          data-aos="fade-up"
+          data-delay={`${100 * i}`}
+          class={`${item.key == "" ? "hidden" : "text-start bg-indigo-50 text-indigo-500 rounded-full py-2 px-4"}`}
+        >
+          <p>{t.problem.items[item.key]}</p>
         </div>
       ))
     }
   </div>
 
-  <p class="text-xl text-indigo-500">
+  <p 
+  data-aos="fade-up"
+  class="text-xl text-indigo-500">
     {t.problem.footer}
   </p>
 </section>
