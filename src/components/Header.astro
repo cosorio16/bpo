@@ -16,10 +16,10 @@ const links = [
     key: "howItWorks",
     href: "#howitworks",
   },
-  {
-    key: "infrastructure",
-    href: "#infrastructure",
-  },
+  // {
+  //   key: "infrastructure",
+  //   href: "#infrastructure",
+  // },
   {
     key: "pricing",
     href: "#pricing",
@@ -28,17 +28,19 @@ const links = [
     key: "contact",
     href: "#contact",
   },
-  {
-    key: "faq",
-    href: "#faq",
-  },
+  // {
+  //   key: "faq",
+  //   href: "#faq",
+  // },
 ];
 ---
 
 <header
   class="flex items-center justify-between h-20 font-DM fixed top-0 w-screen z-10 px-8 transition"
 >
-  <a href="#" class="w-32 font-manrope font-bold" data-aos="fade-right">INVERCON</a>
+  <a href="#" class="w-32 font-manrope font-bold" data-aos="fade-right"
+    >INVERCON</a
+  >
   <nav class="grow hidden lg:block">
     <ul class="flex items-center justify-center gap-12">
       {
@@ -55,6 +57,17 @@ const links = [
           </li>
         ))
       }
+
+      <li>
+        <a
+          data-aos="zoom-in"
+          data-aos-delay={500}
+          href={`${locale == "en" ? "/es" : "/"}`}
+          class="border-b border-transparent hover:border-white transition"
+        >
+          {locale == "en" ? "Español" : "English"}
+        </a>
+      </li>
     </ul>
   </nav>
   <button
@@ -68,7 +81,7 @@ const links = [
 <style>
   header {
     color: white;
-    transition: background .323s ease-in-out;
+    transition: background 0.323s ease-in-out;
   }
 
   header.active {
