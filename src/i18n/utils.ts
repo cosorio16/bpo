@@ -15,8 +15,10 @@
 //   };
 // }
 
+import type { Translations } from "../types/types";
+
 const translations = import.meta.glob("./*.json", { eager: true });
 
-export function useTranslations(locale: String | undefined) {
-  return translations[`./${locale}.json`];
+export function useTranslations(locale: String | undefined): Translations {
+  return translations[`./${locale}.json`] as Translations;
 }
