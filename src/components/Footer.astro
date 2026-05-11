@@ -36,10 +36,10 @@ const sections = [
       {
         sections.map((s) => (
           <div data-aos="fade-down" class="flex flex-col gap-4">
-            <h1 class="text-white/70">{t.footer.sections[s.key].title}</h1>
+            <h1 class="text-white/75 font-bold">{t.footer.sections[s.key].title}</h1>
 
             {s.links.map((l) => (
-              <a href="#" class="border-b">{t.footer.sections[s.key].links[l]}</a>
+              <a href="#" class="border-b border-white/30 pb-1.5">{t.footer.sections[s.key].links[l]}</a>
             ))}
           </div>
         ))
