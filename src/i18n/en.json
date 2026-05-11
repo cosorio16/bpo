@@ -348,7 +348,7 @@
         "lastName": "Last Name",
         "email": "Email",
         "phone": "Phone",
-        "opinion": "Opinion"
+        "opinion": "Message"
       },
 
       "placeholders": {
@@ -356,10 +356,13 @@
         "lastName": "Last Name",
         "email": "Your Email",
         "phone": "Your Phone Number",
-        "opinion": "Your Opinion (optional)"
+        "opinion": "Message (optional)"
       },
 
-      "button": "Submit"
+      "button": "Submit",
+      "sending": "Sending...",
+      "success": "Form submitted successfully",
+      "error": "An error occurred while submitting the form"
     }
   },
 

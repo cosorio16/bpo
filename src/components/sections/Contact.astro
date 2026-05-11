@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from "../../i18n/utils";
+
 const locale = Astro.currentLocale;
 const t = await useTranslations(locale);
 ---
@@ -11,7 +12,10 @@ const t = await useTranslations(locale);
   <div
     class="flex flex-col gap-2 bg-indigo-500 text-white h-full p-8 justify-center items-center py-20"
   >
-    <h1 data-aos="zoom-out" class="text-6xl lg:text-8xl font-bold">{t.contact.title}</h1>
+    <h1 data-aos="zoom-out" class="text-6xl lg:text-8xl font-bold">
+      {t.contact.title}
+    </h1>
+
     <p
       data-aos="zoom-in"
       class="text-sm lg:text-base bg-neutral-50/10 text-neutral-100 px-4 py-2 rounded-full border border-neutral-200 w-fit font-manrope"
@@ -19,66 +23,87 @@ const t = await useTranslations(locale);
       {t.contact.description}
     </p>
   </div>
+
   <form
-    action=""
     id="contact-form"
     class="flex flex-col gap-1 justify-center p-8 border border-neutral-200 h-full"
   >
     <div class="grid grid-cols-2 gap-2">
       <div class="flex flex-col">
-        <label data-aos="fade-up" for="name">{t.contact.form.labels.name}</label
-        >
+        <label data-aos="fade-up" for="name">
+          {t.contact.form.labels.name}
+        </label>
+
         <input
           type="text"
+          id="name"
+          name="name"
+          required
           data-aos="fade-up"
           placeholder={t.contact.form.placeholders.name}
-          id="
-          name"
         />
       </div>
+
       <div class="flex flex-col">
-        <label data-aos="fade-up" for="lastName"
-          >{t.contact.form.labels.lastName}</label
-        >
+        <label data-aos="fade-up" for="lastName">
+          {t.contact.form.labels.lastName}
+        </label>
+
         <input
           type="text"
+          id="lastName"
+          name="lastName"
+          required
           data-aos="fade-up"
           placeholder={t.contact.form.placeholders.lastName}
-          id="lastName"
         />
       </div>
     </div>
-    <label data-aos="fade-up" for="email">{t.contact.form.labels.email}</label>
+
+    <label data-aos="fade-up" for="email">
+      {t.contact.form.labels.email}
+    </label>
+
     <input
       type="email"
+      id="email"
+      name="email"
+      required
       data-aos="fade-up"
       placeholder={t.contact.form.placeholders.email}
-      id="email"
     />
-    <label data-aos="fade-up" for="phone">{t.contact.form.labels.phone}</label>
+
+    <label data-aos="fade-up" for="phone">
+      {t.contact.form.labels.phone}
+    </label>
+
     <input
-      type="number"
-      data-aos="fade-up"
-      name=""
+      type="tel"
       id="phone"
+      name="phone"
+      data-aos="fade-up"
       placeholder={t.contact.form.placeholders.phone}
     />
-    <label data-aos="fade-up" for="opinion"
-      >{t.contact.form.labels.opinion}</label
-    >
+
+    <label data-aos="fade-up" for="opinion">
+      {t.contact.form.labels.opinion}
+    </label>
+
     <textarea
-      data-aos="fade-up"
-      name=""
       id="opinion"
+      name="opinion"
+      data-aos="fade-up"
       placeholder={t.contact.form.placeholders.opinion}
       class="h-40"></textarea>
 
     <button
+      id="submit-btn"
       data-aos="fade-up"
       type="submit"
-      class="py-4 text-xl text-white bg-indigo-500 rounded cursor-pointer"
-      >{t.contact.form.button}</button
+      class="py-4 text-xl text-white bg-indigo-500 rounded cursor-pointer disabled:opacity-50"
     >
+      {t.contact.form.button}
+    </button>
   </form>
 </section>
 
@@ -91,6 +116,7 @@ const t = await useTranslations(locale);
   label:has(+ textarea:focus) {
     color: oklch(58.5% 0.233 277.117);
   }
+
   input,
   textarea {
     border: 1.5px solid #ddd;
@@ -107,3 +133,53 @@ const t = await useTranslations(locale);
     outline-color: oklch(58.5% 0.233 277.117);
   }
 </style>
+
+<script lang="ts">
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#contact-form");
+    const submitBtn = document.querySelector("#submit-btn");
+
+    if (!form || !submitBtn) {
+      console.error("Formulario no encontrado");
+      return;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Enviando...";
+
+      try {
+        const formData = new FormData(form);
+        const formEntries = Object.fromEntries(formData.entries());
+        const payload = {
+          data: [Object.values(formEntries)],
+        };
+
+        const response = await fetch("https://invercon.vercel.app/api/sheets", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error("Error al enviar formulario");
+        }
+
+        form.reset();
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        } else {
+          console.error("Error desconocido");
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Enviar";
+      }
+    });
+  });
+</script>

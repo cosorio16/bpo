@@ -352,7 +352,7 @@
         "lastName": "Apellido",
         "email": "Correo Electrónico",
         "phone": "Teléfono",
-        "opinion": "Opinión"
+        "opinion": "Mensaje"
       },
 
       "placeholders": {
@@ -360,10 +360,13 @@
         "lastName": "Apellido",
         "email": "Tu Correo Electrónico",
         "phone": "Tu Número de Teléfono",
-        "opinion": "Tu Opinión (opcional)"
+        "opinion": "Mensaje (opcional)"
       },
 
-      "button": "Enviar"
+      "button": "Enviar",
+      "sending": "Enviando...",
+      "success": "Formulario enviado correctamente",
+      "error": "Ocurrió un error al enviar el formulario"
     }
   },
 
