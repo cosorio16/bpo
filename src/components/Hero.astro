@@ -2,6 +2,9 @@
 import { useTranslations } from "../i18n/utils";
 const locale = Astro.currentLocale;
 const t = await useTranslations(locale);
+
+import PhoneIcon from "../icons/PhoneIcon.astro";
+import ChartIcon from "../icons/ChartIcon.astro";
 ---
 
 <div class="w-full relative font-manrope h-dvh max-h-210">
@@ -17,10 +20,10 @@ const t = await useTranslations(locale);
     <div
       class="bg-[url(https://images.openai.com/static-rsc-4/oNuiW7QkNpgZEQUZfOm0WA_gMwAualsSgic6x4wDquzCupt3qmXnVxkcqOB6nuXrgfqUEOLJZQajjqVF-_kvpqw719GIWNN32xoWZqzAN6UiRnlV2NVOqCpavqJyQpQonZqwsL6vPYMahLmNStxShP5z4JXAtBCnou42xd-1PCN0-uhhHPgen8je8fbKV7by?purpose=fullsize)] absolute inset-0 bg-no-repeat bg-cover bg-center"
     >
-
-    <div class="absolute inset-0 bg-linear-to-b from-black/90 to-indigo-500/50">
-
-    </div>
+      <div
+        class="absolute inset-0 bg-linear-to-b from-black/90 to-indigo-500/50"
+      >
+      </div>
     </div>
 
     <div class="flex flex-col items-center gap-3 w-full p-1">
@@ -47,16 +50,21 @@ const t = await useTranslations(locale);
     </p> -->
 
     <div class="flex flex-col lg:flex-row items-center gap-8 text-xl">
-      <button
+      <a
+        href="#contact"
         data-aos="fade-down"
-        class="ring-2 ring-indigo-500 px-8 py-3 rounded-full bg-indigo-500 text-white w-full lg:w-fit"
+        class="ring-2 flex items-center gap-3 ring-indigo-500 px-8 py-3 rounded-full bg-indigo-500 text-white w-full lg:w-fit"
       >
+        <PhoneIcon sizes="30" />
         {t.hero.buttons.strategyCall}
-      </button>
-      <button
+      </a>
+      <a
+        href="#pricing"
         data-aos="fade-down"
-        class="ring-2 px-8 py-3 rounded-full text-white w-full lg:w-fit"
-        >{t.hero.buttons.analysis}</button
+        class="ring-2 flex items-center gap-3 px-8 py-3 rounded-full text-white w-full lg:w-fit"
+      >
+        <ChartIcon sizes="30" />
+        {t.hero.buttons.analysis}</a
       >
     </div>
   </div>
