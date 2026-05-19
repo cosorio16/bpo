@@ -4,18 +4,30 @@ const locale = Astro.currentLocale;
 const t = await useTranslations(locale);
 ---
 
-<div class="w-full relative font-manrope h-dvh max-h-200">
+<div class="w-full relative font-manrope h-dvh max-h-210">
   <div
     id="home"
     class="flex flex-col items-center justify-center max-w-7xl m-auto text-center gap-8 text-white py-60"
   >
-    <div
+    <!-- <div
       class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
+    </div> -->
+
+    <div
+      class="bg-[url(https://images.openai.com/static-rsc-4/oNuiW7QkNpgZEQUZfOm0WA_gMwAualsSgic6x4wDquzCupt3qmXnVxkcqOB6nuXrgfqUEOLJZQajjqVF-_kvpqw719GIWNN32xoWZqzAN6UiRnlV2NVOqCpavqJyQpQonZqwsL6vPYMahLmNStxShP5z4JXAtBCnou42xd-1PCN0-uhhHPgen8je8fbKV7by?purpose=fullsize)] absolute inset-0 bg-no-repeat bg-cover bg-center"
+    >
+
+    <div class="absolute inset-0 bg-linear-to-b from-black/90 to-indigo-500/50">
+
+    </div>
     </div>
 
     <div class="flex flex-col items-center gap-3 w-full p-1">
-      <h1 class="text-2xl lg:text-6xl font-medium font-manrope" data-aos="fade-up">
+      <h1
+        class="text-2xl lg:text-6xl font-medium font-manrope"
+        data-aos="fade-up"
+      >
         {t.hero.title.line1}
         <br />
         <span class="text-indigo-500 font-semibold font-DM">

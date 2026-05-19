@@ -1,10 +1,15 @@
 ---
 import Calc from "../react/Calc.jsx";
+import { useTranslations } from "../../i18n/utils";
+
+const locale = Astro.currentLocale;
+const t = await useTranslations(locale);
+
 const keys = [
-  "Reduce labor costs by up to 60%",
-  "Eliminate infrastructure expenses",
-  "Lower turnover-related costs",
-  "Increase ROI within the first 90 days",
+  t.costs.keys.laborCosts,
+  t.costs.keys.infrastructureExpenses,
+  t.costs.keys.turnoverCosts,
+  t.costs.keys.roiIncrease,
 ];
 ---
 
@@ -16,7 +21,7 @@ const keys = [
     class="flex items-center justify-start grow lg:order-1 order-2 p-1"
     data-aos="fade-down"
   >
-    <Calc client:load />
+    <Calc t={t} client:load />
   </div>
 
   <div
@@ -24,13 +29,18 @@ const keys = [
     data-aos="fade-up"
   >
     <div class="flex flex-col gap-2">
-      <h1 class="text-6xl">
-        See How Much You<br /> Can
-        <span class="text-indigo-500"> Save </span>
+      <h1 class="text-5xl">
+        {t.costs.title.line1}
+        <br />
+        <span class="text-indigo-500">
+          {t.costs.title.highlight}
+        </span>
       </h1>
+
       <h2 class="text-2xl text-neutral-500">
-        Calculate your operational savings in minutes.
+        {t.costs.subtitle}
       </h2>
+
       <ul class="flex items-center flex-wrap gap-x-4 gap-y-2 text-sm">
         {
           keys.map((k, i) => (
@@ -45,7 +55,7 @@ const keys = [
     <button
       class="ring-2 ring-indigo-500 px-4 py-2 text-indigo-500 text-2xl lg:text-4xl font-manrope font-medium"
     >
-      Get Your Analysis
+      {t.costs.button}
     </button>
   </div>
 </section>

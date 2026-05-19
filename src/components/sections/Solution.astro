@@ -12,14 +12,18 @@ const elements = [
 
 <section class="px-2 lg:px-8 lg:py-40 py-12 font-manrope max-w-7xl m-auto">
   <div
-    class="bg-indigo-500 rounded-lg flex flex-col gap-8 py-12 lg:py-32 px-4 lg:px-16 text-white lg:text-center justify-center"
+    class="bg-[url(https://images.openai.com/static-rsc-4/uJLpTHiSxzxs2rx6NlkBEb8FI-rGpMdtJKzpFPGrElrNo_VnaMVWZFhUMeX_NJ8wq_D9XF5D1zxHI69G2UvkEyveMfRLJIqw8yMc1G4KHY-1orzQQbgpb7NeuLnNpBoyjuWpLlmpYM-0o_C7AQc21Cw3gJJ4w7kscW0bAWUcSmNux06iK8WyEIRyElgOK0Q1?purpose=fullsize)] flex flex-col gap-8 py-12 lg:py-32 px-4 lg:px-16 text-white lg:text-center justify-center relative rounded-lg bg-no-repeat bg-cover bg-center h-200"
   >
+    <div
+      class="absolute inset-0 bg-linear-to-b from-indigo-500/25 to-black rounded-lg"
+    >
+    </div>
     <div class="flex flex-col gap-4">
       <h1 class="text-4xl lg:text-6xl" data-aos="fade-up">
         {t.solution.title.line1}
         <br />
 
-        <span class="font-DM font-semibold">
+        <span class="font-DM font-semibold text-indigo-500">
           {t.solution.title.highlight}
         </span>
       </h1>
@@ -39,7 +43,7 @@ const elements = [
           <li
             data-aos="fade-down"
             data-aos-delay={100 * i}
-            class="ring-2 rounded-full px-4 py-1.5 bg-white text-indigo-500 font-medium font-DM text-sm text-center"
+            class={`rounded-full px-4 py-1.5 font-medium font-DM text-sm text-center ${i % 2 == 0 ? "rotate-3 bg-white text-indigo-500" : "-rotate-3 bg-indigo-500 text-white"}`}
           >
             {t.solution.elements[e]}
           </li>

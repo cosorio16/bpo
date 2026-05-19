@@ -10,18 +10,20 @@ const t = await useTranslations(locale);
   class="grid grid-cols-1 lg:grid-cols-2 max-w-7xl m-auto font-DM min-h-[60dvh] items-center py-20"
 >
   <div
-    class="flex flex-col gap-2 bg-indigo-500 text-white h-full p-8 justify-center items-center py-20"
+    class="min-h-72 text-white h-full p-8 py-20 relative bg-[url(https://images.openai.com/static-rsc-4/ROSruKSgwX-gLUeGWKH-bQAloTnIgCbske6BHhuTArEG6ADqnpcJvG-Fd8rO_KrWE5vaWOERkiNLAJl6o6V11TQNNNMP69Y1DRMb_HHrBs4j3YzZvZJhe_JVixKhYvs-UYAmrYc3h9xrM6-9aUhljjKfV6jB975NGudtfKcZ6iZe-_sVcMN9jYmMkpkwDP8y?purpose=fullsize)] bg-cover bg-no-repeat bg-center"
   >
-    <h1 data-aos="zoom-out" class="text-6xl lg:text-8xl font-bold">
-      {t.contact.title}
-    </h1>
+    <div class="absolute inset-0 bg-linear-to-b from-black/25 to-indigo-500/25 flex flex-col gap-3 items-center justify-center">
+      <h1 data-aos="zoom-out" class="text-6xl lg:text-8xl font-bold">
+        {t.contact.title}
+      </h1>
 
-    <p
-      data-aos="zoom-in"
-      class="text-sm lg:text-base bg-neutral-50/10 text-neutral-100 px-4 py-2 rounded-full border border-neutral-200 w-fit font-manrope"
-    >
-      {t.contact.description}
-    </p>
+      <p
+        data-aos="zoom-in"
+        class="text-sm lg:text-base bg-neutral-50/10 text-neutral-100 px-4 py-2 rounded-full border border-neutral-200 w-fit font-manrope backdrop-blur"
+      >
+        {t.contact.description}
+      </p>
+    </div>
   </div>
 
   <form

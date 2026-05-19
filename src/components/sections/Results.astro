@@ -7,23 +7,30 @@ const items = [
   {
     key: "healthcare",
     items: ["payrollReduction", "billingDecrease"],
+    img: "https://images.openai.com/static-rsc-4/qHPWswKRV02cyM-ohqX96w5flfhHebMWdZ4Bwan5sIYc9TP1LN95pyNOCV2vIIB5agVsL0aYq02i7Uu92Jlkpq45dzcXrxN9mbjXxxpLt1vRDX-TQdp3XywnadhswALwjvCSdogePDdXgP0ulvvj6I8qzPgapBajMhvWtAZYlJOOOmujv8FLmFTZAoyUG_aj?purpose=fullsize",
   },
   {
     key: "saas",
     items: ["costSavings", "leadIncrease"],
+    img: "https://images.openai.com/static-rsc-4/nkX5ZQFj5AGrtZofAokrE-3FlJTEPdgVo4QQPUDl89StVk3_irQDT1r_u1uDBE-cftwxRvulcIkgWNnXo3_fFmqoQ5QNdwNPeVKbOGvK4spH9nyIsKzYuofNWrNW-pq5ykxPWWoFDHVAzsiVckb6nXj_1M5KB6wua3Ee9TcP1NSA5JtXqj-xspjUIrBP9WJ0?purpose=fullsize",
   },
   {
     key: "legal",
     items: ["costReduction", "backlogEliminated"],
+    img: "https://images.openai.com/static-rsc-4/_1OAuYnBFD_IwBNXkzlTc55ueNozBfudw5wPFn1-9sa8vBO16zodVJCtBVe3VPV-bg14KJyNr5LcOeZDrhPktN_-JJgo49jOB-vwsocUqZc1w-cuJKdPAM01VYfqyEcsf-cGcCcXghyVuBCqxFNQNhF8X8LPo0MA2ikLb4yOVOytNzSdet6uU-BmZbScemiz?purpose=fullsize",
   },
   {
     key: "ecommerce",
     items: ["adminSavings", "financialCycles"],
+    img: "https://images.openai.com/static-rsc-4/NcXPUXuHGU4qI9BD8xIn9mFw1qODdvEtQwrKeDq49Pybg07d4OI1tz9JK4660n3Ny0a-U_zuwuJdjVcHVjTTupoEnn-aQSJwcpq6L-ux4YmXGdQLwg21iIQCh1z90pZNAPeXhEBC3Q-cgvW2WTL9GPjcTC6QxlfcoBcuhlpP62a3pFAtAMKJmNfX6C6Ig57f?purpose=fullsize",
   },
 ];
 ---
 
-<section class="px-4 lg:px-8 py-20 lg:py-40 max-w-7xl m-auto font-DM flex flex-col gap-8">
+<section
+id="results"
+  class="px-4 lg:px-8 py-20 lg:py-40 max-w-7xl m-auto font-DM flex flex-col gap-8"
+>
   <h1 class="text-3xl lg:text-6xl text-center font-medium" data-aos="fade-up">
     {t.results.title.line1}
     <span class="font-manrope text-indigo-500 font-semibold results">
@@ -32,21 +39,28 @@ const items = [
     {t.results.title.line2}
   </h1>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 gridContainer">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 gridContainer">
     {
       items.map((item) => (
         <div
           data-aos="zoom-out"
-          class="border px-4 py-8 border-neutral-200 rounded flex flex-col gap-3"
+          style={`background-image: url(${item.img});`}
+          class={`border px-4 py-8 border-neutral-200 rounded relative h-100  bg-no-repeat bg-cover bg-center`}
         >
-          <h2 class="text-indigo-500 lg:text-5xl text-2xl">
-            {t.results.items[item.key].title}
-          </h2>
+          <div class="flex flex-col gap-3 justify-center items-center absolute inset-0 bg-linear-to-b from-black/25 to-indigo-500/25 text-white rounded ransition duration-300">
 
-          <div class="flex flex-col gap-1">
-            {item.items.map((sub) => (
-              <p class="text-lg lg:text-2xl">{t.results.items[item.key].results[sub]}</p>
-            ))}
+
+            <h2 class=" lg:text-5xl text-2xl">
+              {t.results.items[item.key].title}
+            </h2>
+
+            <div class="flex flex-col gap-1">
+              {item.items.map((sub) => (
+                <p class="text-lg lg:text-2xl py-2 border-b border-white/50">
+                  {t.results.items[item.key].results[sub]}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       ))

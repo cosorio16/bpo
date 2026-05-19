@@ -1,7 +1,7 @@
 import NumberFlow from "@number-flow/react";
 import { useState } from "react";
 
-function Calc() {
+function Calc({ t }) {
   const [employees, setEmployees] = useState(10);
   const [salary, setSalary] = useState(4000);
 
@@ -30,8 +30,9 @@ function Calc() {
       <div>
         <div className="flex flex-col gap-1">
           <p className="w-fit text-emerald-500 bg-emerald-50 px-4 py-1 rounded-full border border-emerald-200">
-            You could save monthly
+            {t.costs.summary.monthlySavings}
           </p>
+
           <span className="text-6xl lg:text-7xl font-manrope text-indigo-500 font-medium px-2">
             <NumberFlow
               value={monthlySavings}
@@ -47,9 +48,11 @@ function Calc() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between border-b pb-4 border-neutral-200">
             <span className="font-medium text-2xl text-neutral-500">
-              Current Cost:
+              {t.costs.summary.currentCost}:
             </span>
+
             {/* <NumberFlow value={currentCost} /> */}
+
             <span className="bg-indigo-50 text-indigo-500 px-2 py-1 border-indigo-200 isolate">
               {formatCurrency(currentCost)}
             </span>
@@ -57,8 +60,9 @@ function Calc() {
 
           <div className="flex items-center justify-between border-b pb-4 border-neutral-200">
             <span className="font-medium text-2xl text-neutral-500">
-              With us:
+              {t.costs.summary.withUs}:
             </span>
+
             {/* <NumberFlow value={newCost} /> */}
 
             <span className="bg-indigo-50 text-indigo-500 px-2 py-1 border-indigo-200 isolate">
@@ -68,7 +72,7 @@ function Calc() {
 
           <div className="flex items-center justify-between border-b pb-4 border-neutral-200">
             <span className="font-medium text-2xl text-neutral-500">
-              Annual Savings:
+              {t.costs.summary.annualSavings}:
             </span>{" "}
             {/* <NumberFlow value={annualSavings} /> */}
             <span className="bg-indigo-50 text-indigo-500 px-2 py-1 border-indigo-200 isolate">
@@ -77,11 +81,13 @@ function Calc() {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <span className="text-neutral-500 bg-neutral-50 px-4 py-1 border border-neutral-200 rounded-full w-fit">
-            Salary: {salary}
+            {t.costs.sliders.salary}: {salary}
           </span>
+
           <input
             type="range"
             min="1000"
@@ -95,8 +101,9 @@ function Calc() {
 
         <div className="flex flex-col gap-2">
           <span className="text-neutral-500 bg-neutral-50 px-4 py-1 border border-neutral-200 rounded-full w-fit">
-            Employees: {employees}
+            {t.costs.sliders.employees}: {employees}
           </span>
+
           <input
             type="range"
             min="10"

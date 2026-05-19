@@ -2,6 +2,11 @@
 import { useTranslations } from "../../i18n/utils";
 const locale = Astro.currentLocale;
 const t = await useTranslations(locale);
+import ShipIcon from "../../icons/ShipIcon.astro";
+import CallIcon from "../../icons/CallIcon.astro";
+import BackOffice from "../../icons/BackOffice.astro";
+import SupportIcon from "../../icons/SupportIcon.astro";
+import LeadsIcon from "../../icons/LeadsIcon.astro";
 
 const services = [
   {
@@ -13,6 +18,7 @@ const services = [
       "warehouseOperations",
       "importExport",
     ],
+    icon: ShipIcon
   },
   {
     title: "customerExperience",
@@ -22,10 +28,12 @@ const services = [
       "slaPerformance",
       "qaCoaching",
     ],
+    icon: CallIcon
   },
   {
     title: "backOffice",
     items: ["accounts", "payroll", "dataEntry", "financialWorkflows"],
+    icon: BackOffice
   },
   {
     title: "technicalSupport",
@@ -35,6 +43,7 @@ const services = [
       "systemSupport",
       "continuityManagement",
     ],
+    icon: SupportIcon
   },
   {
     title: "salesLeadGeneration",
@@ -44,6 +53,7 @@ const services = [
       "outboundInbound",
       "pipelineAcceleration",
     ],
+    icon: LeadsIcon
   },
 ];
 ---
@@ -61,12 +71,16 @@ const services = [
 
     <div class="flex flex-col gap-16">
       {
-        services.map((key, i) => (
+        services.map((key, i) => {
+          const Icon = key.icon
+
+          return (
           <div class="flex flex-col gap-4">
             <h1
-              class="text-2xl lg:text-5xl font-medium border-b-2 py-4 px-2 border-white/20"
+              class="flex items-center gap-2 text-2xl lg:text-5xl font-medium border-b-2 py-4 px-2 border-white/20"
               data-aos="fade-up"
             >
+              <Icon sizes="40"/>
               {t.services.items[key.title].title}
             </h1>
 
@@ -81,7 +95,8 @@ const services = [
               ))}
             </ul>
           </div>
-        ))
+        )
+        })
       }
     </div>
   </div>

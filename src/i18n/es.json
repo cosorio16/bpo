@@ -9,7 +9,8 @@
       "infrastructure": "Infraestructura",
       "pricing": "Precios",
       "contact": "Contacto",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "results": "Resultados"
     },
 
     "buttons": {
@@ -260,19 +261,29 @@
       "line1": "Descubre Cuánto Puedes",
       "highlight": "Ahorrar"
     },
+    "subtitle": "Calcula tus ahorros operativos en minutos.",
 
-    "subtitle": "Calcula tus ahorros operacionales en minutos.",
-
-    "keys": {
-      "laborCosts": "Reduce los costos laborales hasta en un 60%",
-      "infrastructureExpenses": "Elimina gastos de infraestructura",
-      "turnoverCosts": "Reduce costos relacionados con la rotación",
-      "roiIncrease": "Aumenta el ROI en los primeros 90 días"
+    "summary": {
+      "monthlySavings": "Podrías ahorrar mensualmente",
+      "currentCost": "Costo Actual",
+      "withUs": "Con nosotros",
+      "annualSavings": "Ahorro Anual"
     },
 
-    "button": "Obtener Tu Análisis"
-  },
+    "sliders": {
+      "salary": "Salario",
+      "employees": "Empleados"
+    },
 
+    "keys": {
+      "laborCosts": "Reduce costos laborales hasta en un 60%",
+      "infrastructureExpenses": "Elimina gastos de infraestructura",
+      "turnoverCosts": "Reduce costos por rotación de personal",
+      "roiIncrease": "Incrementa el ROI en los primeros 90 días"
+    },
+
+    "button": "Obtén Tu Análisis"
+  },
   "howItWorks": {
     "title": {
       "line1": "Simple.",
